@@ -1,0 +1,29 @@
+{
+  "name": "angular-dribbble-zup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server ./app -a localhost -p 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gustavo Rodovalho",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "~1.8.0",
+    "browser-sync": "^2.18.13",
+    "browser-sync-spa": "^1.0.3",
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^3.1.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "jasmine": "^2.8.0",
+    "time-grunt": "^1.4.0"
+  }
+}
