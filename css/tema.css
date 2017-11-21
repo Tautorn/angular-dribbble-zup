@@ -1,0 +1,317 @@
+body{
+    background: #f4f4f4
+}
+.header{
+	background: #333;
+	height: 40px
+}
+.headerNav{
+	    border-bottom: 1px solid #e5e5e5;
+    background: rgba(255,255,255,0.6);
+	height: 50px
+}
+
+
+/*===============================
+=            Header             =
+===============================*/
+
+.logoMarca {
+    width: 175px;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    margin: 4px 0;
+}
+
+.logoMarca a {
+    height: 32px;
+    background: url('/img/zup-dribbble.svg') 0 0 no-repeat;
+    display: block;
+    text-indent: -4000px;
+    background-size: contain;
+}
+
+.boxSearch{
+    margin: 6px 0;
+}
+
+
+/*=====  End of Header   ======*/
+
+
+
+
+/*=========================================
+=            Navigation Filter            =
+=========================================*/
+ul.menuFilter{
+    margin: 0 auto;
+    padding: 0;
+    list-style:none;
+    display:table;
+    position: relative;
+}
+ul.menuFilter li.itemMenuFilter{
+    display: table-cell;
+}
+ul.menuFilter li.itemMenuFilter > a.linkMenuFilter{
+    display: block;
+    padding: 16px 15px 17px 20px;
+    text-decoration: none;
+    color: #444;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15px;
+    text-align: center;
+    cursor: pointer;
+}
+ul.menuFilter li.itemMenuFilter:hover > a.linkMenuFilter,
+ul.menuFilter li.itemMenuFilter:active > a.linkMenuFilter,
+ul.menuFilter li.itemMenuFilter:focus > a.linkMenuFilter{
+    text-decoration:none;
+}
+ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter{
+    display: none;
+    z-index: 999999;
+    position: absolute;
+    margin: 0;
+    padding: 10px 0px;
+    list-style-type: none;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fbfbfb;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+}
+ul.menuFilter li.itemMenuFilter:hover > ul.subMenuFilter{
+    display: block;
+    min-width: 200px;
+}
+ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter  > li.subItemMenuFilter > ul.listaSubCategoria{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    display:block;
+}
+ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter  > li.subItemMenuFilter > a.subLinkMenuFilter{
+    font-weight: 300;
+    color: #999;
+    font-size: 14px;
+    display: table;
+    width: 100%;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter  > li.subItemMenuFilter > a.subLinkMenuFilter:hover{
+    color: #444;
+    background-color: #eee;
+    text-decoration: none;
+    opacity: 1;
+    cursor: pointer;
+}
+ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter  > li.subItemMenuFilter > ul.listaSubCategoria > li.itemSubCategoria > a.linkSubCategoria {
+    color: #999;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+/*=====  End of Navigation Filter  ======*/
+
+
+
+
+
+.sectionShots{
+	background: #f4f4f4
+}
+
+.listaShots{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.itemShot{
+    position: relative;
+}
+.dribbble{
+	    position: relative;
+    clear: left;
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+.dribbble-shot{
+	padding: 10px;
+    position: relative;
+}
+	.tools{
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: table;
+        text-align: left;
+        color: #bbb;
+        font-size: 11px;
+        margin-top: 10px;
+        display:flex;justify-content:flex-end;align-items:center;
+	}
+	.tools li{
+		    display: inline-flex;
+    margin-left: 5px;	
+	}
+	.iconNav{
+		fill: #bbb;
+		width: 16px;
+		
+    margin-right: 5px;
+		height: 16px;
+	}
+	.fav SVG:hover{
+		fill: #ec4989;
+	}
+	.cmnt SVG:hover{
+		fill: #4080ff
+	}
+	.views SVG:hover{
+		fill: #00bfa5
+	}
+
+
+	input.searchText {
+    width: 190px;
+    padding: 5px 5px 5px 25px;
+    font-size: 13px;
+    font-weight: normal;
+    vertical-align: middle;
+    color: #bbb;
+    border: none;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 7px 50%;
+    border-radius: 4px;
+}
+
+.dribbble-over strong{
+    display: block;
+    margin: 0 25px 4px 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.2;
+    color: #444;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.comment{
+	display: block;
+    margin: 0 0 10px 0;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #777;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.dribbble-img {
+    position: relative;
+}
+
+.itemShot{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.dribbble-over{
+    background-color: rgba(255, 255, 255, .8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    transition-delay: .1s;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+.dribbble-link,
+.dribbble-over,
+.dribbble-link:hover,
+.dribbble-over:hover{
+
+    text-decoration: none
+}
+
+.dribbble-img:hover>.dribbble-over {
+    opacity: 1;
+    visibility: visible
+}
+
+
+
+
+
+.boxAuthor{
+
+}
+.boxAvatarAuthor{
+    width: 16px;
+    height: 16px;
+    float: left;
+    margin:1px 5px 0 0;
+}
+.boxNameAuthor{
+
+}
+.boxNameAuthor h3{
+    font-size: 15px;
+    font-weight: 500;
+    color: #1e6189;
+    line-height: 18px;
+    margin: 10px 0 0;
+}
+
+
+
+.boxShotModal{
+    min-height: 300px;
+    margin: 0 0 30px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+.shotModal .headerShotModal .boxNameShots{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.shotModal .headerShotModal .boxAvatarAuthor{
+    width: 48px;
+    height: 48px;
+    float: left;
+    margin:1px 5px 0 0;
+}
+
+.animatefalse{
+    display: none;
+}
+.animatetrue{
+    width: 24px;
+    height: 24px;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    fill: rgba(255,255,255,0.6);
+    stroke: #444;
+    stroke-width: 1;
+}
+.gif{
+    background: red !important;
+}

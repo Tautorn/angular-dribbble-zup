@@ -21,9 +21,14 @@
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-htmlmin": "^2.4.0",
     "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.1.0",
     "grunt-contrib-watch": "^1.0.0",
     "jasmine": "^2.8.0",
     "time-grunt": "^1.4.0"
+  },
+  "dependencies": {
+    "angular-sanitize": "^1.6.6",
+    "izimodal": "^1.5.1"
   }
 }

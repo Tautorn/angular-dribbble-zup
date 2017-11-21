@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html ng-app="appShots">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' />
+    <title>Zup Consumindo API publica do Dribbble</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="node_modules/izimodal/css/iziModal.min.css">
+    <link rel="stylesheet" type="text/css" href="css/tema.css">
+</head>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1">
+    <defs>
+        <symbol id="view" viewBox="0 0 488.85 488.85">
+            <g>
+            <path d="M244.425,98.725c-93.4,0-178.1,51.1-240.6,134.1c-5.1,6.8-5.1,16.3,0,23.1c62.5,83.1,147.2,134.2,240.6,134.2
+                    s178.1-51.1,240.6-134.1c5.1-6.8,5.1-16.3,0-23.1C422.525,149.825,337.825,98.725,244.425,98.725z M251.125,347.025
+                    c-62,3.9-113.2-47.2-109.3-109.3c3.2-51.2,44.7-92.7,95.9-95.9c62-3.9,113.2,47.2,109.3,109.3
+                    C343.725,302.225,302.225,343.725,251.125,347.025z M248.025,299.625c-33.4,2.1-61-25.4-58.8-58.8c1.7-27.6,24.1-49.9,51.7-51.7
+                    c33.4-2.1,61,25.4,58.8,58.8C297.925,275.625,275.525,297.925,248.025,299.625z"/>
+            </g>
+        </symbol>
+        <symbol id="like" viewBox="0 0 510 510">
+            <g>
+            <path d="M255,489.6l-35.7-35.7C86.7,336.6,0,257.55,0,160.65C0,81.6,61.2,20.4,140.25,20.4c43.35,0,86.7,20.4,114.75,53.55
+            C283.05,40.8,326.4,20.4,369.75,20.4C448.8,20.4,510,81.6,510,160.65c0,96.9-86.7,175.95-219.3,293.25L255,489.6z"/>
+            </g>
+        </symbol>
+        <symbol id="comments" viewBox="0 0 511.626 511.626">
+            <g>
+                <path d="M477.371,127.44c-22.843-28.074-53.871-50.249-93.076-66.523c-39.204-16.272-82.035-24.41-128.478-24.41
+                        c-34.643,0-67.762,4.805-99.357,14.417c-31.595,9.611-58.812,22.602-81.653,38.97c-22.845,16.37-41.018,35.832-54.534,58.385
+                        C6.757,170.833,0,194.484,0,219.228c0,28.549,8.61,55.3,25.837,80.234c17.227,24.931,40.778,45.871,70.664,62.811
+                        c-2.096,7.611-4.57,14.846-7.426,21.693c-2.855,6.852-5.424,12.474-7.708,16.851c-2.286,4.377-5.376,9.233-9.281,14.562
+                        c-3.899,5.328-6.849,9.089-8.848,11.275c-1.997,2.19-5.28,5.812-9.851,10.849c-4.565,5.048-7.517,8.329-8.848,9.855
+                        c-0.193,0.089-0.953,0.952-2.285,2.567c-1.331,1.615-1.999,2.423-1.999,2.423l-1.713,2.566c-0.953,1.431-1.381,2.334-1.287,2.707
+                        c0.096,0.373-0.094,1.331-0.57,2.851c-0.477,1.526-0.428,2.669,0.142,3.433v0.284c0.765,3.429,2.43,6.187,4.998,8.277
+                        c2.568,2.092,5.474,2.95,8.708,2.563c12.375-1.522,23.223-3.606,32.548-6.276c49.87-12.758,93.649-35.782,131.334-69.097
+                        c14.272,1.522,28.072,2.286,41.396,2.286c46.442,0,89.271-8.138,128.479-24.417c39.208-16.272,70.233-38.448,93.072-66.517
+                        c22.843-28.062,34.263-58.663,34.263-91.781C511.626,186.108,500.207,155.509,477.371,127.44z"/>
+            </g>
+        </symbol>
+        <symbol id="iconGif" viewBox="0 0 439.875 439.875">
+            <g>
+                <path d="M382.5,95.625H57.375C24.862,95.625,0,120.487,0,153v133.875c0,32.513,24.862,57.375,57.375,57.375H382.5
+                    c32.513,0,57.375-24.862,57.375-57.375V153C439.875,120.487,415.013,95.625,382.5,95.625z M172.125,172.125H114.75
+                    c-11.475,0-19.125,7.65-19.125,19.125v57.375c0,11.475,7.65,19.125,19.125,19.125H153V229.5h-38.25v-19.125h57.375V229.5v42.075
+                    v15.3H114.75c-21.038,0-38.25-17.213-38.25-38.25V191.25c0-21.038,17.212-38.25,38.25-38.25h57.375V172.125z M248.625,172.125
+                    H229.5v95.625h19.125v19.125H191.25V267.75h19.125v-95.625H191.25V153h57.375V172.125z M363.375,172.125h-76.5v38.25h57.375V229.5
+                    h-57.375v57.375H267.75V153h95.625V172.125z"/>
+            </g>
+        </symbol>
+    </defs>
+</svg>
+
+
+<body ng-controller="ShotsController">
+    <div class="wrap">
+        <header class="header">
+            <div class="container">
+                <div class="col-md-5">
+                    <div class="boxLogo">
+                        <h1 class="logoMarca">
+                            <a href=""></a>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="col-md-5 col-md-offset-5">
+                    <div class="boxSearch pull-right">
+                        <input type="search" class="searchText" ng-model="searchBox.title" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="headerNav">
+            <div class="container">
+                <nav>
+                    <ul class="menuFilter">
+                        <li class="itemMenuFilter">
+                            <a class="linkMenuFilter">Popular</a>
+                            <ul class="subMenuFilter">
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('sort','recent', 'Recent')">Recent</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('sort','views', 'Most Viewed')">Most Viewed</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('sort','comments', 'Most Commented')">Most Commented</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="itemMenuFilter">
+                            <a class="linkMenuFilter">Shots</a>
+                            <ul class="subMenuFilter">
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('list','debuts', 'Debuts')">Debuts</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('list','teams', 'Team Solos')">Team Shots</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('list','playoffs', 'Playoffs')">Playoffs</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('list','rebounds', 'Rebounds')">Rebounds</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('list','animated', 'Animated Gifs')">Animated GIFs</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('list','attachments', 'Shots with Attachments')">Shots with Attachments</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="itemMenuFilter">
+                            <a class="linkMenuFilter">Now</a>
+                            <ul class="subMenuFilter">
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('timeframe','week', 'This Past Week')">This Past Week</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('timeframe','month', 'This Past Month')">This Past Month</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('timeframe','year', 'This Past Year')">This Past Year</a>
+                                </li>
+                                <li class="subItemMenuFilter">
+                                    <a class="subLinkMenuFilter" ng-click="ordenarShots('timeframe','ever', 'All Time')">All Time</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <section class="sectionShots">
+            <div class="container">
+                <ul class="listaShots">
+                    <li ui-shots class="itemShot col-md-3" item="s" ng-repeat="s in shots | filter:searchBox"></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/izimodal/js/iziModal.min.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/controllers/shots.controller.js"></script>
+    <script type="text/javascript" src="js/directives/shots.directive.js"></script>
+    <script type="text/javascript" src="js/factory/shots.factory.js"></script>
+    <script type="text/javascript" src="js/filters/removeHTMLTags.filter.js"></script>
+
+</body>
+</html>

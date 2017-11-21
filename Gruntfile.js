@@ -8,16 +8,17 @@ module.exports = function (grunt) {
         dev: {
             bsFiles: {
                 src : [
-                    'app/*.html',
-                    'app/css/*.css',
+                    './*.html'
+                    //'app/css/*.css',
                 ]
             },
             options: {
                 watchTask: true,
-                server: './app'
+                server: './'
             }
         }
     },
+
     clean: {
         temp: ['dist/js/libs.js', 'dist/js/libs.min.js', 'dist/js/scripts.js', 'dist/js/scripts.min.js'],
         all: ['dist/']
@@ -96,6 +97,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  //grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
