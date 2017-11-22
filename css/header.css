@@ -1,0 +1,52 @@
+body{
+  -webkit-font-smoothing: antialiased;
+  background: #f4f4f4;
+  color: rgba(0,0,0,0.7);
+}
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+/*===============================
+=            Header             =
+===============================*/
+  .header{
+    background: #333;
+    height: 40px
+  }
+  .header .headerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logoMarca {
+    width: 175px;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    margin: 4px 0;
+  }
+  .logoMarca a {
+    height: 32px;
+    background: url('/img/zup-dribbble.svg') 0 0 no-repeat;
+    display: block;
+    text-indent: -4000px;
+    background-size: contain;
+  }
+  .boxSearch{
+  }
+  input.searchText {
+    width: 190px;
+    padding: 5px 5px 5px 25px;
+    font-size: 13px;
+    font-weight: normal;
+    vertical-align: middle;
+    color: #bbb;
+    border: none;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: 7px 50%;
+    border-radius: 4px;
+  }
+/*=====  End of Header   ======*/

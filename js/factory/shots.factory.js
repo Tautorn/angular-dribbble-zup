@@ -2,7 +2,7 @@ angular.module("appShots").factory("ListaShots", function($q, $http){
 	return{
 		listar:function(){
 			var promessa = $q.defer();
-			var url_API = "https://api.dribbble.com/v1/shots/?access_token=deb07c28a7f2e0bc874eef017267b7320b51a61d7f0da3c0fb826e06b965809b" ;
+			var url_API = "https://api.dribbble.com/v1/shots/?access_token=660f90a5599a73248638282bf30c4b98f21a75757c98887c9ac81ee23cca2e03" ;
 			$http.get(url_API).then(
 				function(result){
 					var shots = [];

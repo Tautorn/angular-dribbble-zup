@@ -1,26 +1,26 @@
-﻿<div id="" class="group ">
-  <div class="dribbble">
-    <div class="dribbble-shot">
-      <div class="dribbble-img">
-        <a class="dribbble-link">
+﻿<div class="group">
+  <div class="borderItemShot">
+    <div class="shotMain">
+      <div class="shotImg">
+        <a class="linkShotHover">
           <picture>
-            <source ng-srcset="{{ shot.images.normal }}" media="(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx)">
-            <source ng-srcset="{{ shot.images.teaser }}">
-            <img class="img-responsive" alt="Birds / Stamps collection" ng-srcset="{{ shot.images.teaser }}">
+            <source ng-srcset="{{ shot.images.hidpi }}" media="(min-width: 600px)">
+            <source ng-srcset="{{ shot.images.teaser }}" media="(min-width: 768px)">
+            <source ng-srcset="{{ shot.images.normal }}" media="(min-width: 992px)">
+            <img class="img-responsive" alt="{{ shot.title }}" ng-srcset="{{ shot.images.normal }}">
           </picture>
         </a>
-          <svg ng-class="{ 'animatetrue': shot.animated , 'animatefalse': !shot.animated  }">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconGif"></use>
-          </svg>
-        <a class="dribbble-over"  data-iziModal-open="#{{shot.id}}">
+        <svg ng-class="{ 'animatetrue': shot.animated , 'animatefalse': !shot.animated  }">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#iconGif"></use>
+        </svg>
+        <a class="boxShotHouver"  data-iziModal-open="#{{shot.id}}">
           <strong>{{ shot.title }}</strong>
-          <span class="comment">
+          <span class="descriptionShot">
             {{ shot.description | removeHTMLTags |readMore: 140 }}
           </span>
         </a>
       </div>
-      <span class="clearfix"></span>
-      <ul class="tools group">
+      <ul class="tools">
         <li class="views">
           <svg class="iconNav">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#view"></use>
@@ -37,28 +37,21 @@
           <svg class="iconNav">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#like"></use>
           </svg>
-          <span>{{ shot.likes_count }}</span>
+          <span >{{ shot.likes_count }}</span>
+
         </li>
       </ul>
     </div>
   </div>
-</div>
-<div class="boxAuthor">
-  <div class="boxAvatarAuthor">
-    <img class="img-responsive img-circle" alt="{{ shot.title }}" ng-srcset="{{shot.user.avatar_url}}">
+  <div class="boxAuthor">
+    <div class="boxAvatarAuthor">
+      <img class="img-responsive img-circle" alt="{{ shot.title }}" ng-srcset="{{shot.user.avatar_url}}">
+    </div>
+    <div class="boxNameAuthor">
+      <h3>{{shot.user.name }}</h3>
+    </div>
   </div>
-  <div class="boxNameAuthor">
-    <h3>{{shot.user.name }}</h3>
-  </div>
 </div>
-
-
-
-
-
-
-
-
 <div id="{{shot.id}}" class="shotModal" data-izimodal-group="shots">
   <header class="headerShotModal">
     <div class="boxAuthor">
@@ -71,43 +64,36 @@
       <div class="boxNameAuthor">
         <h3>by <span>{{shot.user.name}}</span> on <span>{{shot.created_at | date}}</span></h3>
       </div>
-      <div class="boxDataPubli">
-        
-      </div>
     </div>
   </header><!-- /header -->
 
-<div class="row">
-  <div class="">
-  <div class="shotZoom col-md-12">
-    <div class="boxShotModal">
-    <img ng-click="changeClass()" class="img-responsive" alt="{{ shot.title }}" ng-srcset="{{ shot.images.hidpi }}">
-    {{class}}
+  <div class="row">
+    <div class="shotZoom col-md-9">
+      <div class="boxShotModal">
+        <img  class="img-responsive" alt="{{ shot.title }}" ng-srcset="{{ shot.images.hidpi }}">
+      </div>
+    </div>
+    <div class="col-md-3">
+        <ul class="tools">
+          <li class="views">
+            <svg class="iconNav">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#view"></use>
+            </svg>
+            <span>{{ shot.views_count }}</span>
+          </li>
+          <li class="cmnt">
+            <svg class="iconNav">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comments"></use>
+            </svg>
+            <span original-title="">{{ shot.comments_count }}</span>
+          </li>
+          <li class="fav">
+            <svg class="iconNav">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#like"></use>
+            </svg>
+            <span>{{ shot.likes_count }}</span>
+          </li>
+        </ul>
     </div>
   </div>
-  </div>
-  <div class="col-md-3">
-      <ul class="tools group">
-        <li class="views">
-          <svg class="iconNav">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#view"></use>
-          </svg>
-          <span>{{ shot.views_count }}</span>
-        </li>
-        <li class="cmnt">
-          <svg class="iconNav">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#comments"></use>
-          </svg>
-          <span original-title="">{{ shot.comments_count }}</span>
-        </li>
-        <li class="fav">
-          <svg class="iconNav">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#like"></use>
-          </svg>
-          <span>{{ shot.likes_count }}</span>
-        </li>
-      </ul>
-  </div>
-</div>
-
 </div>

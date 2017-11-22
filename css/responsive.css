@@ -1,0 +1,39 @@
+/*==================================
+=            Responsive            =
+==================================*/
+@media (max-width: 992px) {
+  .itemShot{
+    width: 25%;
+  }
+}
+@media (max-width: 768px) {
+  .itemShot{
+    width: 33%;
+  }
+}
+@media (max-width: 600px) {
+  .header{
+    height: auto;
+  }
+  .itemShot{
+    width: 50%;
+  }
+  .boxSearch {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  input.searchText{
+    width: 100%;
+  }
+  .header .headerContainer{
+    flex-direction: column;
+  }
+
+}
+@media (max-width: 320px) {
+  .itemShot{
+    width: 100%;
+  }
+}
+/*=====  End of Responsive  ======*/

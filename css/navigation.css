@@ -1,0 +1,79 @@
+/*=========================================
+=            Navigation Filter            =
+=========================================*/
+  .headerNav{
+   border-bottom: 1px solid #e5e5e5;
+   background: rgba(255,255,255,0.6);
+   height: 50px
+  }
+  ul.menuFilter{
+    margin: 0 auto;
+    padding: 0;
+    list-style:none;
+    display:table;
+    position: relative;
+  }
+  ul.menuFilter li.itemMenuFilter{
+    display: table-cell;
+  }
+  ul.menuFilter li.itemMenuFilter > a.linkMenuFilter{
+    display: block;
+    padding: 16px 15px 17px 20px;
+    text-decoration: none;
+    color: #444;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 15px;
+    text-align: center;
+    cursor: pointer;
+  }
+  ul.menuFilter li.itemMenuFilter:hover > a.linkMenuFilter,
+  ul.menuFilter li.itemMenuFilter:active > a.linkMenuFilter,
+  ul.menuFilter li.itemMenuFilter:focus > a.linkMenuFilter{
+    text-decoration:none;
+  }
+  ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter{
+    display: none;
+    z-index: 999999;
+    position: absolute;
+    margin: 0;
+    padding: 10px 0px;
+    list-style-type: none;
+    border-bottom: 1px solid #e5e5e5;
+    background: #fbfbfb;
+    box-shadow: 1px 2px 2px rgba(0,0,0,0.2);
+  }
+  ul.menuFilter li.itemMenuFilter:hover > ul.subMenuFilter{
+    display: block;
+    min-width: 200px;
+  }
+  ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter  > li.subItemMenuFilter > ul.listaSubCategoria{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    display:block;
+  }
+  ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter  > li.subItemMenuFilter > a.subLinkMenuFilter{
+    font-weight: 300;
+    color: #999;
+    font-size: 14px;
+    display: table;
+    width: 100%;
+    padding: 5px 15px;
+    cursor: pointer;
+  }
+  ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter  > li.subItemMenuFilter > a.subLinkMenuFilter:hover{
+    color: #444;
+    background-color: #eee;
+    text-decoration: none;
+    opacity: 1;
+    cursor: pointer;
+  }
+  ul.menuFilter > li.itemMenuFilter > ul.subMenuFilter  > li.subItemMenuFilter > ul.listaSubCategoria > li.itemSubCategoria > a.linkSubCategoria {
+    color: #999;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+/*=====  End of Navigation Filter  ======*/

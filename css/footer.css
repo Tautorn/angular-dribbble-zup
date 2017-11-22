@@ -1,0 +1,16 @@
+/*==============================
+=            Footer            =
+==============================*/
+  .footer {
+    border-top: 1px solid #e5e5e5;
+    background: rgba(255,255,255,0.6);
+    height: 50px;
+    margin-top: 15px;
+  }
+  .footer ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+/*=====  End of Footer  ======*/

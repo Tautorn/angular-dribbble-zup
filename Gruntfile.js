@@ -31,10 +31,16 @@ module.exports = function (grunt) {
     concat: {
         scripts: {
             src: [
-              'js/**/*.js', 
-              'lib/**/*.js'
+              'js/**/*.js'
             ],
             dest: 'dist/js/scripts.js'
+        },
+        css: {
+            src: [
+              'css/**/*.css',
+              'bower_components/bootstrap/dist/css/bootstrap.css'
+            ],
+            dest: 'dist/css/styles.css'
         },
         libs: {
             src: [
@@ -78,7 +84,7 @@ module.exports = function (grunt) {
     },
     copy: {
         all: {
-            src: 'index-prod.html',
+            src: 'index.html',
             dest: 'dist/index.html'
         }
     },
@@ -107,5 +113,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
 
-  grunt.registerTask('prod', ['clean:all', 'jshint', 'concat:scripts', 'uglify', 'concat:libs', 'concat:all', 'cssmin', 'htmlmin', 'copy', 'clean:temp','browserSync', 'watch']);
+  grunt.registerTask('serve-dev', ['clean:all', 'jshint', 'concat:scripts', 'uglify', 'concat:libs', 'concat:all', 'cssmin', 'htmlmin', 'copy', 'clean:temp','browserSync', 'watch']);
 }
