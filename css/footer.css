@@ -6,11 +6,14 @@
     background: rgba(255,255,255,0.6);
     height: 50px;
     margin-top: 15px;
+    padding: 0;
+    color: #bbbbbb;
   }
   .footer ul{
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    height: 50px;
   }
 /*=====  End of Footer  ======*/

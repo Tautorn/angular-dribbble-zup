@@ -11,12 +11,15 @@
                     width: 920,
                     background: '#f4f4f4',
                     padding: 40,
-                    navigateArrows: true,
+                    navigateArrows: 'closeToModal',
                     closeButton : false,
                     transitionIn: 'comingIn',
                     transitionOut: 'comingOut',
                     transitionInOverlay: 'fadeIn',
-                    transitionOutOverlay: 'fadeOut'
+                    transitionOutOverlay: 'fadeOut',
+                    overlayClose: true,
+                    closeOnEscape: true,
+                    closeButton: true,
                 });
             });
         }
